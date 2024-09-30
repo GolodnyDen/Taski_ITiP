@@ -104,7 +104,6 @@ class Tasks_2 {
     for (char c : input.toCharArray()) {
         if (c == marker) {
             if (insideMarkers) {
-                // Если мы внутри маркерных символов, то развернем temp и добавим к результату
                 result.append(temp.reverse());
                 temp.setLength(0);
             }
@@ -135,12 +134,17 @@ class Tasks_2 {
   }
 
   public static boolean isAnagram(String str1, String str2) {
+
     str1 = str1.toLowerCase();
     str2 = str2.toLowerCase();
+
     char[] charArray1 = str1.toCharArray();
     char[] charArray2 = str2.toCharArray();
+
     Arrays.sort(charArray1);
     Arrays.sort(charArray2);
+
     return Arrays.equals(charArray1, charArray2);
+    
   }
 }
